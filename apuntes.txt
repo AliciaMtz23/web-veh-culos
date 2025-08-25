@@ -1,0 +1,56 @@
+<?php
+// Conectar a la base de datos
+$servidor="localhost";
+$usuario="root";
+$password="";
+$db="renta";
+
+$conexion = new mysqli($servidor, $usuario, $password, $db) or die(mysqli_error($conexion));
+
+
+
+// Verificar si se han enviado datos por el formulario
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recoger los datos del formulario si existen
+    $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : "";
+    $apellidos = isset($_POST['apellidos']) ? $_POST['apellidos'] : "";
+    $edad = isset($_POST['edad']) ? $_POST['edad'] : "";
+    $identificacion = isset($_POST['identificacion']) ? $_POST['identificacion'] : "";
+    $correo = isset($_POST['correo']) ? $_POST['correo'] : "";
+    $direccion = isset($_POST['direccion']) ? $_POST['direccion'] : "";
+    $recoleccion = isset($_POST['recoleccion']) ? $_POST['recoleccion'] : "";
+    $fecha_recoleccion = isset($_POST['fecha_recoleccion']) ? $_POST['fecha_recoleccion'] : "";
+    $hora_recoleccion = isset($_POST['hora_recoleccion']) ? $_POST['hora_recoleccion'] : "";
+    $devolucion = isset($_POST['devolucion']) ? $_POST['devolucion'] : "";
+    $fecha_devolucion = isset($_POST['fecha_devolucion']) ? $_POST['fecha_devolucion'] : "";
+    $hora_devolucion = isset($_POST['hora_devolucion']) ? $_POST['hora_devolucion'] : "";
+    $pasajeros = isset($_POST['pasajeros']) ? $_POST['pasajeros'] : "";
+    $vehiculo = isset($_POST['vehiculo']) ? $_POST['vehiculo'] : "";
+
+    // Preparar la consulta SQL
+    $sql = "INSERT INTO Reservas (nombre, apellidos, edad, identificacion, correo, direccion, recoleccion, fecha_recoleccion, hora_recoleccion, devolucion, fecha_devolucion, hora_devolucion, pasajeros, vehiculo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    // Preparar la declaración
+    if ($stmt = $conexion->prepare($sql)) {
+        // Vincular los parámetros
+        $stmt->bind_param("ssisssssssssis", $nombre, $apellidos, $edad, $identificacion, $correo, $direccion, $recoleccion, $fecha_recoleccion, $hora_recoleccion, $devolucion, $fecha_devolucion, $hora_devolucion, $pasajeros, $vehiculo);
+
+        // Ejecutar la consulta
+        if ($stmt->execute()) {
+            echo "¡Reserva exitosa!";
+        } else {
+            echo "Error al ejecutar la consulta: " . $stmt->error;
+        }
+
+        // Cerrar la declaración
+        $stmt->close();
+    } else {
+        echo "Error en la preparación de la consulta: " . $conexion->error;
+    }
+} else {
+    echo "No se han recibido datos del formulario.";
+}
+
+// Cerrar la conexión
+$conexion->close();
+?>

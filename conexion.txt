@@ -1,0 +1,13 @@
+<?php
+$servidor="localhost";
+$usuario="root";
+$password="";
+$db="renta";
+$conexion=mysqli_connect($servidor, $usuario, $password, $db)or die(mysql_error());
+
+if ($conexion){
+    echo "se realizo la conexion";
+}else {
+    echo "no se realizo";
+}
+?>

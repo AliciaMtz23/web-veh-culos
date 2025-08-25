@@ -1,0 +1,205 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Color de fondo para el cuerpo */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.vehicle {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-reserva {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-reserva:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el menú */
+.menu-container {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: #676493;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    font-size: 18px;
+}
+
+.menu li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 90px;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu li a:hover {
+    color: #ddd;
+}
+
+.logo {
+    margin-right: 20px;
+}
+
+.logo img {
+    max-height: 90px;
+    vertical-align: middle;
+}
+
+.d-grid {
+    border-color: #2EAAE0;
+    border-width: 10px;
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    text-align: center;
+    background-color: #02374F;
+    color: white;
+    padding: 1rem;
+}
+
+/* Estilos para el formulario */
+.form-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 80%;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input[type="text"],
+.input-group input[type="number"],
+.input-group input[type="email"],
+.input-group input[type="date"],
+.input-group input[type="time"],
+.input-group select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #2EAAE0;
+    box-sizing: border-box;
+}
+
+.input-group input[type="email"] {
+    border-color: #ffcc00; /* Cambia el color del borde del campo de correo electrónico */
+}
+
+.input-group input[type="email"]:focus {
+    
+    outline: none;
+}
+
+.input-group input[type="date"],
+.input-group input[type="time"] {
+    width: calc(50% - 20px);
+    display: inline-block;
+}
+
+.input-group select {
+    width: 100%;
+}
+
+.input-group input[type="date"],
+.input-group input[type="time"] {
+    width: 120px;
+}
+
+.input-group select {
+    width: 100%;
+}
+
+.recuadro {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.recuadro .cerrar {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+/*ubicaciones*/ 
+h1 {
+    color: #333;
+    margin: 20px 0;
+}
+
+.locations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.location {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    width: calc(33% - 40px);
+    box-sizing: border-box;
+}
+
+.location h2 {
+    margin: 0 0 10px;
+}
+
+.location iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 8px;
+}
+.vehicle-image {
+    max-width: 50%; /* Ajusta el ancho máximo de la imagen al contenedor */
+    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción de la imagen */
+    display: block; /* Evita que la imagen se vea distorsionada */
+    margin-bottom: 10px; /* Espacio adicional debajo de la imagen */
+}
