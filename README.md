@@ -1,2 +1,2 @@
-# web-veh-culos
+# web-vehiculos
 Pagina web de renta de vehículos 
